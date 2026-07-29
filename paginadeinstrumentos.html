@@ -1,0 +1,248 @@
+<!DOCTYPE html>  
+<html lang="es"> <!-- idioma  -->
+<head>
+    <meta charset="UTF-8"> <!-- tildes  -->
+    <title> tienda de Intrumentos  </title>  <!--  titulo o nombre de la pagina -->
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        header {
+            background-image: url('https://musicalcedar.com/wp-content/uploads/2023/12/Musicar-Cedar-Poblado-la-10-2.jpeg');
+            background-position: center;
+            color: white;
+            padding: 200px 200px;
+            text-align: center; 
+        }
+        header h1 {
+            background-color: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            padding: 50px 50px;
+            border-radius: 45px;
+        }
+        .contenedor {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            padding: 50px;
+        }
+        .producto {
+            background-color: white;
+            width: 300px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .producto:hover {
+            transform: scale(1.03);
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        h2 {
+            font-size: 20px;
+            color: #333;
+        }
+        p {
+            font-size: 14px;
+            color: #555;
+        }
+        .boton-compra {
+            background-color: #ae2727;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .boton-compra:hover {
+            background-color: #218d91;
+        }
+        .contacto {
+            text-align: center;
+            padding: 20px;
+            background-color: #ecf0f1;
+        }
+        .contacto a {
+            text-decoration: none;
+            margin: 0 15px;
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        .contacto a:hover {
+            color: #2980b9;
+        }
+
+        /* Estilos para ventana emergente */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        .popup-contenido {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            animation: entrada 0.5s ease;
+        }
+        .popup-contenido img {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+        .popup-contenido h2 {
+            margin: 0 0 10px 0;
+        }
+        .cerrar {
+            margin-top: 15px;
+            padding: 8px 20px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        @keyframes entrada {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>MusiCompras</h1>
+</header>
+
+<section class="contenedor">
+
+    <div class="producto">
+        <img src="https://electronica2001es.com/images/2023/20260514192737.jpeg" alt="Trompeta">
+        <h2>Trompeta estilo oro</h2>
+        <p><strong>Q1,350.00</strong></p>
+        <p>La dorada</p>
+        <button class="boton-compra" onclick="mostrarPopup('Trompeta Dorada')">Comprar</button>
+    </div>
+
+    <div class="producto">
+        <img src="https://backoffice.max.com.gt/media/catalog/product/a/5/a5842fdfabb7715e.jpg" alt="Guitars">
+        <h2>GuitarBlack </h2>
+        <p><strong>Q1,160.00</strong></p>
+        <p>Ideal para aprender</p>
+        <button class="boton-compra" onclick="mostrarPopup('BlackGuitar')">Comprar</button>
+    </div>
+
+    <div class="producto">
+        <img src="https://backoffice.max.com.gt/media/catalog/product/0/5/058630ddad37c745.jpg" alt="Congas">
+        <h2>Congas con buena resonancia </h2>
+        <p><strong>Q3,000.00</strong></p>
+        <p>ideal para principales</p>
+        <button class="boton-compra" onclick="mostrarPopup('Congas exelentes')">Comprar</button>
+    </div>
+	
+	<div class="producto">
+        <img src="https://neomusica.es/cdn/shop/files/36589.jpg?v=1774624200&width=500" alt="Saxofón">
+        <h2>Saxofón</h2>
+        <p><strong>Q3,700.00</strong></p>
+        <p>para ejecutar esas melodias clasicas </p>
+        <button class="boton-compra" onclick="mostrarPopup('Buen Saxo')">Comprar</button>
+    </div>
+	
+	<div class="producto">
+        <img src="https://cdnx.jumpseller.com/musicchile/image/57529879/resize/480/480?1757378991" alt="Teclado de estudio">
+        <h2>Piano Portatil</h2>
+        <p><strong>Q2,600.00</strong></p>
+        <p>para estudiantes de piano clasico</p>
+        <button class="boton-compra" onclick="mostrarPopup('Teclado Musical')">Comprar</button>
+    </div>
+	
+	<div class="producto">
+        <img src="https://2ratones.com/images/virtuemart/product/YWBD-20WH-1.jpg" alt="Bombo">
+        <h2>Bombo</h2>
+        <p><strong>Q1,200.00</strong></p>
+        <p>Para dar el toque en las bandas</p>
+        <button class="boton-compra" onclick="mostrarPopup('Bombo White')">Comprar</button>
+    </div>
+	
+	<div class="producto">
+        <img src="https://ektguatemala.vtexassets.com/arquivos/ids/209874/bateria-acustica-profesional-liverpool-sp-185-kit-completo-5-piezas-con-platillos-y-soportes-40008948.webp?v=639143757011800000" alt="Bateria de 5 piezas">
+        <h2>bateria liverpool</h2>
+        <p><strong>Q4,200.00</strong></p>
+        <p>Lista para armar y tocar</p>
+        <button class="boton-compra" onclick="mostrarPopup('Bateria Acustica')">Comprar</button>
+    </div>
+	
+	<div class="producto">
+        <img src="https://www.domisolmusic.com/wp-content/uploads/2024/01/IBANEZ-GRG121SP-GYC--jpg.webp" alt="electric guitar">
+        <h2>electric guitar </h2>
+        <p><strong>Q1,300.00</strong></p>
+        <p>muy bucadas por musicos</p>
+        <button class="boton-compra" onclick="mostrarPopup('Guitarra Electrica')">Comprar</button>
+    </div>
+	
+	<div class="producto">
+        <img src="https://electronicapanamericana.com/wp-content/uploads/2026/01/Violin-para-principiantes-HV-100-de-4_4-3.jpg" alt="Violín">
+        <h2>Ideal para ti</h2>
+        <p><strong>Q1,000.00</strong></p>
+        <p>Para aquellos que quieren aprender</p>
+        <button class="boton-compra" onclick="mostrarPopup('Violín')">Comprar</button>
+    </div>
+	
+	<div class="producto">
+        <img src="https://es.yamaha.com/es/files/yep-202m_540x540_tcm121-1671228.jpg?impolicy=large&imwid=735&imhei=735" alt="Eufonio">
+        <h2>Eufonio</h2>
+        <p><strong>Q2,300.00</strong></p>
+        <p>Ideal para bandas escolares</p>
+        <button class="boton-compra" onclick="mostrarPopup('eufonio plateado')">Comprar</button>
+    </div>
+
+
+</section>
+
+<div class="contacto">
+    <h3>Contáctanos</h3>
+    <a href="https://wa.me/50248510096" target="_blank">📱 WhatsApp</a>
+    <a href="mailto:MusiCompras@instrumentos.com">📧 Correo</a>
+    <a href="tel:+50248510096">📞 Llamada</a>
+</div>
+
+
+<div class="popup" id="popup">
+    <div class="popup-contenido">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk_AwBNBYqJJV2e0NCaxBuOEjfQ9c1MvevG3_-u1D-SQ&s=10" alt="Éxito">
+        <h2>¡Compra realizada!</h2>
+        <p id="mensajeProducto"></p>
+        <button class="cerrar" onclick="cerrarPopup()">Aceptar</button>
+    </div>
+</div>
+
+<script>
+    function mostrarPopup(producto) {
+        document.getElementById("mensajeProducto").innerText = "Has comprado: " + producto + ". Te contactaremos pronto.";
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    function cerrarPopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
